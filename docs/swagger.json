@@ -1,0 +1,50 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Go Swagger Example API",
+        "contact": {},
+        "version": "1.0"
+    },
+    "host": "localhost:8080",
+    "basePath": "/api/v1",
+    "paths": {
+        "/todos": {
+            "get": {
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "todos"
+                ],
+                "summary": "Lấy danh sách công việc",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/go-swagger-example_internal_models.Todo"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "go-swagger-example_internal_models.Todo": {
+            "type": "object",
+            "properties": {
+                "completed": {
+                    "type": "boolean"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "task": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

@@ -23,7 +23,7 @@ const docTemplate = `{
                 "tags": [
                     "todos"
                 ],
-                "summary": "Lấy danh sách công việc",
+                "summary": "ABABBABABA",
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -35,10 +35,50 @@ const docTemplate = `{
                         }
                     }
                 }
+            },
+            "post": {
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "todos"
+                ],
+                "summary": "Tạo",
+                "parameters": [
+                    {
+                        "description": "Nội dung công việc",
+                        "name": "input",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/go-swagger-example_internal_models.CreateTodoInput"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "$ref": "#/definitions/go-swagger-example_internal_models.Todo"
+                        }
+                    }
+                }
             }
         }
     },
     "definitions": {
+        "go-swagger-example_internal_models.CreateTodoInput": {
+            "type": "object",
+            "required": [
+                "task"
+            ],
+            "properties": {
+                "task": {
+                    "description": "binding required nếu gửi yêu cầu trống thì báo lỗi",
+                    "type": "string"
+                }
+            }
+        },
         "go-swagger-example_internal_models.Todo": {
             "type": "object",
             "properties": {

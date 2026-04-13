@@ -1,13 +1,13 @@
 package handlers
 
 import (
-	"go-swagger-example/internal/models" // Import đúng đường dẫn module
+	"go-swagger-example/internal/models"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
 )
 
-// @Summary      Lấy danh sách công việc
+// @Summary      ABABBABABA
 // @Tags         todos
 // @Produce      json
 // @Success      200  {array}  models.Todo
